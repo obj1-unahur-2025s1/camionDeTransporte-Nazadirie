@@ -1,9 +1,25 @@
 import camion.*
+import cosas.*
 
-describe "group of test for camion" {
+describe "test para el ejercicio camion sector cosas " {
+  
+    method initialize() {
+    
+  }
+  test "los ladrillos pesan 10" {
+    assert.equals(10,paqueteLadrillos.peso())
+  }
 
-  test "first test" {
-    assert.that(true)
+  test "peligrosidad de la Bateria cargada es 100"{
+    bateriaAntiAerea.cargarBateria()
+    assert.equals(100, bateriaAntiAerea.peligrosidad())
+  }
+
+  test "el embalaje tiene nivel de peligrosidad "{
+    embalajeDeSeguridad.loDeAdentro(knightRider)
+    assert.equals(5
+    ,embalajeDeSeguridad.peligrosidad())
+
   }
 
 }

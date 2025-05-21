@@ -1,9 +1,36 @@
 import cosas.*
+import camion.*
+/*Tests hasta acá
+Hay que hacer un pequeño test para cada una de las siguientes cosas: paquete de ladrillos, batería antiaérea, contenedor portuario y embalaje de seguridad.
+Al embalaje ponerle adentro los residuos radioactivos con 30 kg de peso. Al contenedor, dos o tres cosas a elección. Todo esto en un archivo cosasTest.wtest.
 
-describe "group of test for cosas" {
+Por otro lado, armar un test del camión, cargado con lo siguiente: bumblebee como robot, la arena a granel con 150 kilos, la batería antiaérea con los misiles puestos, y el embalaje de seguridad poniéndole como contenido el paquete de ladrillos con 80 ladrillos.
+Para cada método, calcular qué resultado tiene que dar, y hacer el test correspondiente.
+Esto va en camionTest.wtest.*/
 
-  test "first test" {
-    assert.that(true)
+describe "test para el ejercicio camion sector cosas " {
+  
+    method initialize() {
+    residuosRadioActivos.peso(30)
+    embalajeDeSeguridad.loDeAdentro(residuosRadioActivos)
+    contenedorPortuario.agregarVariasCosas([bumblebee,knightRider,arenaAGranel])
+    arenaAGranel.peso(100)
+    paqueteLadrillos.cantidadLadrillos(5)
+  }
+  test "los ladrillos pesan 10" {
+    assert.equals(10,paqueteLadrillos.peso())
+  }
+
+  test "peligrosidad de la Bateria cargada es 100"{
+    bateriaAntiAerea.cargarBateria()
+    assert.equals(100, bateriaAntiAerea.peligrosidad())
+  }
+
+  test "el embalaje tiene el peso de los residuos y su peligrosidad es la mitad  "{
+    
+    assert.equals(30,embalajeDeSeguridad.peso())
+    assert.equals(100, embalajeDeSeguridad.peligrosidad())
+
   }
 
 }

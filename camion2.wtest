@@ -1,0 +1,24 @@
+
+import camion2.*
+import cosas2.*
+
+describe "test del camion" {
+
+    method initialize() {
+    bumblebee.transformarseEnRobot()
+    arenaAGranel.peso(150)
+    bateriaAntiAerea.cargarBateria()
+    paqueteLadrillos.cantidadLadrillos(80)
+    camion.cargar(bumblebee)
+    camion.cargar(arenaAGranel)
+    camion.cargar(bateriaAntiAerea)
+    camion.cargar(paqueteLadrillos)
+}
+    test "el peso total del camion es 800+140+300+184+1000" {
+    assert.equals(800+140+300+184+1000,camion.pesoTotal())
+}
+
+    test "el camion tiene algo que pesa 800" {
+    assert.that(camion.enlaCargaAlgoPesa(800))
+}
+}
